@@ -21,25 +21,26 @@ public class Controller {
     }
 
     @GetMapping(path = "/plus")
-    public String plus(@RequestParam(name = "num1", required = true) int i, @RequestParam(name = "num2", required = true) int j) {
+    public String plus(@RequestParam(name = "num1", required = true) int i,
+                       @RequestParam(name = "num2", required = true) int j) {
         return i + " + " + j + " = " + calculatorService.plus(i, j);
     }
 
     @GetMapping(path = "/minus")
-    public String minus(@RequestParam(name = "num1", required = true) int i, @RequestParam(name = "num2", required = true) int j) {
+    public String minus(@RequestParam(name = "num1", required = true) int i,
+                        @RequestParam(name = "num2", required = true) int j) {
         return i + " - " + j + " = " + calculatorService.minus(i, j);
     }
 
     @GetMapping(path = "/multiply")
-    public String multiply(@RequestParam(name = "num1", required = true) int i, @RequestParam(name = "num2", required = true) int j) {
+    public String multiply(@RequestParam(name = "num1", required = true) int i,
+                           @RequestParam(name = "num2", required = true) int j) {
         return i + " * " + j + " = " + calculatorService.multiply(i, j);
     }
 
     @GetMapping(path = "/divide")
-    public String divide(@RequestParam(name = "num1", required = true) double i, @RequestParam(name = "num2", required = true) double j) {
-        if (j == 0) {
-            return "На \"0\" делить нельзя!";
-        }
+    public String divide(@RequestParam(name = "num1", required = true) double i,
+                         @RequestParam(name = "num2", required = true) double j) {
         return i + " / " + j + " = " + calculatorService.divide(i, j);
     }
 
